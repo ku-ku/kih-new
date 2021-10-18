@@ -1,0 +1,104 @@
+<template>
+    <v-app-bar
+      app
+      flat
+      color="#fff"
+      hide-on-scroll
+      class="kih-app-bar"
+      :height="has('xs') ? 90 : 132">
+        <v-container>
+            <div class="header__container">
+                <div class="header__content">
+                    <div class="header__logo">
+                        <a href="/" class="logo">
+                            <svg width="120" height="32" viewBox="0 0 88 25" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.7015 9.91029H5.53232V0.131927H0.0916138V24.3295H5.53232V14.5822H11.6863L10.2218 12.2618L11.7015 9.91029Z" fill-opacity="0.4" />
+                                <path d="M28.532 24.3295V0.131927H23.0913V24.3295H28.532Z" fill-opacity="0.4" />
+                                <path d="M39.1251 0.131927V24.3295H44.5354V0.131927H39.1251Z" fill-opacity="0.4" />
+                                <path d="M53.7171 12.2618L61.3887 0.131927H67.5351L59.9014 12.2618L67.5351 24.3295H61.3128L53.7171 12.2618Z" fill-opacity="0.4" />
+                                <path d="M29.3136 24.3295H23.0913L38.3966 0.131927H44.5354L29.3136 24.3295Z" />
+                                <path d="M7.72531 12.2618L15.3969 0.131927H21.5357L13.9021 12.2618L21.5357 24.3295H19.9802H18.4246H16.869H15.3135L7.72531 12.2618Z" />
+                                <path d="M59.9014 12.2618L52.2298 0.131927H46.091L53.7171 12.2618L46.091 24.3295H47.6465H49.2021H50.7501H52.3057L59.9014 12.2618Z" />
+                                <path d="M77.4528 0C75.4647 0 73.9395 1.27274 73.5904 3.12752H72.5888V0.13193H70.8739V7.75285H72.5888V4.6486H73.5677C73.8788 6.55771 75.4344 7.88478 77.4528 7.88478C79.7217 7.88478 81.391 6.21625 81.391 3.94239C81.391 1.66853 79.7217 0 77.4528 0ZM77.4528 6.37922C76.2159 6.37922 75.2598 5.40138 75.2598 3.94239C75.2598 2.48339 76.2159 1.50556 77.4528 1.50556C78.6897 1.50556 79.6458 2.48339 79.6458 3.94239C79.6458 5.40138 78.6897 6.37922 77.4528 6.37922ZM88.0003 0.13193H82.7417V7.75285H84.4567L84.4491 1.56764H87.9927L88.0003 0.13193Z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="header__menu" cols="auto">
+                        <kih-menu v-show="has('menu')" />
+                    </div>
+                    <div class="header__contacts-container">
+                        <div class="header__contacts">
+                            <div class="header__phone">
+                                <a href="tel:88002342542">8(800) 234 254 2</a>
+                            </div>
+                            <div class="header__callback-btn">
+                                <v-btn text small>
+                                    Получить консультацию
+                                </v-btn>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>    
+        </v-container>    
+    </v-app-bar>
+</template>
+<script>
+import KihMenu from "~/components/KihMenu";
+
+export default {
+    name: "KihAppBar",
+    components: {
+        KihMenu
+    },
+    data(){
+        return {
+        };
+    },
+    created(){
+        (async ()=>{
+            await this.$store.getters["meta/meta"];
+        })();
+    },
+    computed: {
+        meta(){
+            return this.$store.state.meta.meta;
+        },
+        title(){
+            return this.meta?.description;
+        }
+    },
+    methods: {
+        has(q){
+            switch(q){
+                case 'index':
+                    return ("index"===this.$route.name);
+                case 'menu':
+                    return (!!this.meta?.menu);
+                case "xs":
+                    return ("xs" === $nuxt.$vuetify.breakpoint.name);
+            }
+        }   //has
+    }
+}
+</script>
+<style lang="scss" scoped>
+    .v-toolbar.kih-app-bar{
+        & .header__logo .logo {
+            fill: #1e468a;
+        }
+        & .header__contacts-container{
+            & .header__contacts{
+                display: flex;
+                flex-wrap: nowrap;
+                & .header__phone{
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 600px) {
+        .v-toolbar.kih-app-bar{
+        }
+    }
+</style>
