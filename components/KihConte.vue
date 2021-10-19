@@ -1,11 +1,10 @@
 <template>
-    <div class="msk-conte" 
+    <div class="kih-conte" 
          v-html="p.conte"
          :key="'conte-' + p.id">
     </div>
 </template>
 <script>
-
 export default {
     name: "MskConte",
     props: {

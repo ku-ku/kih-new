@@ -7,7 +7,7 @@
                 nuxt
                 :to="{name:'conte-id', params:{id: item.oid}}"
                 :value="item.id">
-                <a class="header-menu__link" href="#">
+                <a class="header-menu__link" :href="item.url">
                     {{ item.title }}
                 </a>
             </li>

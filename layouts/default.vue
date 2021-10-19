@@ -4,6 +4,7 @@
     <v-main>
         <Nuxt />
     </v-main>
+    <kih-conte slug="footer" />
   </v-app>
 </template>
 
@@ -23,7 +24,7 @@ export default {
             const _head = document.getElementsByTagName("head")[0];
             const _s = document.createElement('script');
             _s.type = "text/javascript";
-            _s.src = "/scripts/app.min.js";
+            _s.src = "/scripts/app.js";
             _head.appendChild(_s);
         });
     }
