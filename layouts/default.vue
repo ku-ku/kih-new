@@ -1,7 +1,7 @@
 <template>
-  <v-app>
+  <v-app class="app">
     <kih-app-bar />
-    <v-main>
+    <v-main v-scroll="onscroll">
         <Nuxt />
     </v-main>
     <kih-conte slug="footer" />
@@ -19,14 +19,10 @@ export default {
       return {
       };
     },
-    mounted(){
-        this.$nextTick(()=>{
-            const _head = document.getElementsByTagName("head")[0];
-            const _s = document.createElement('script');
-            _s.type = "text/javascript";
-            _s.src = "/scripts/app.js";
-            _head.appendChild(_s);
-        });
+    methods: {
+        onscroll(e){
+            console.log('onscroll', e);
+        }
     }
 }
 </script>

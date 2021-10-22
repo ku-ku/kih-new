@@ -19,6 +19,8 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', type: 'text/css', href: '/styles/swiper-bundle.min.css' },
+      { rel: 'stylesheet', type: 'text/css', href: '/styles/modal.min.css' },
       { rel: 'stylesheet', type: 'text/css', href: '/styles/app.min.css' }
     ],
     script: [

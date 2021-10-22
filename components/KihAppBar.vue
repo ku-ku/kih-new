@@ -1,12 +1,6 @@
 <template>
-    <v-app-bar
-      app
-      flat
-      color="#fff"
-      hide-on-scroll
-      class="kih-app-bar"
-      :height="has('xs') ? 90 : 132">
-        <v-container>
+    <header class="header header--fixed fixed-content b-modal-fixed">
+        <div class="container">
             <div class="header__container">
                 <div class="header__content">
                     <div class="header__logo">
@@ -23,25 +17,23 @@
                             </svg>
                         </a>
                     </div>
-                    <div class="header__menu" cols="auto">
-                        <kih-menu v-show="has('menu')" />
-                    </div>
+                    <kih-menu ref="main-menu" />
                     <div class="header__contacts-container">
                         <div class="header__contacts">
                             <div class="header__phone">
                                 <a href="tel:88002342542">8(800) 234 254 2</a>
                             </div>
                             <div class="header__callback-btn">
-                                <v-btn text small>
+                                <button class="button">
                                     Получить консультацию
-                                </v-btn>
+                                </button>
                             </div>
                         </div>
                     </div>
-                </div>    
-            </div>    
-        </v-container>    
-    </v-app-bar>
+                </div>
+            </div>
+        </div>
+    </header>
 </template>
 <script>
 import KihMenu from "~/components/KihMenu";
@@ -56,9 +48,9 @@ export default {
         };
     },
     created(){
-        (async ()=>{
-            await this.$store.getters["meta/meta"];
-        })();
+        this.$store.dispatch("meta/read");
+    },
+    mounted(){
     },
     computed: {
         meta(){
@@ -78,27 +70,7 @@ export default {
                 case "xs":
                     return ("xs" === $nuxt.$vuetify.breakpoint.name);
             }
-        }   //has
+        },   //has
     }
 }
 </script>
-<style lang="scss" scoped>
-    .v-toolbar.kih-app-bar{
-        & .header__logo .logo {
-            fill: #1e468a;
-        }
-        & .header__contacts-container{
-            & .header__contacts{
-                display: flex;
-                flex-wrap: nowrap;
-                & .header__phone{
-                    white-space: nowrap;
-                }
-            }
-        }
-    }
-    @media screen and (max-width: 600px) {
-        .v-toolbar.kih-app-bar{
-        }
-    }
-</style>
