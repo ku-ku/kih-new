@@ -23,14 +23,14 @@ export const actions = {
                         cache: true,
                         ifModified: true,
                         headers: {
-                            "Cache-Control": "public, max-age=" + 24*3600,
+                            "Cache-Control": "public, max-age=" + 24*3600
                             //TODO: "If-Modified-Since": "Wed, 07 Jul 2021 15:20:30 GMT"  //TODO:
                         }
                     });
                     
                     if (Array.isArray(res)) {
                         if (res.length < 1){
-                            throw {message: 'No page found'};
+                            throw {message: `No page ${payload.slug || payload.id} found`};
                         }
                         res = res[0];
                     }

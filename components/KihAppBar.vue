@@ -24,7 +24,7 @@
                                 <a href="tel:88002342542">8(800) 234 254 2</a>
                             </div>
                             <div class="header__callback-btn">
-                                <button class="button">
+                                <button class="button feedback">
                                     Получить консультацию
                                 </button>
                             </div>

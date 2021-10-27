@@ -1,6 +1,29 @@
 @import "variables";
-header {
-    & a {
-        color: #fff !important;
+.footer {
+    & .footer__container {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    & .footer-menu__items{
+        display: flex;
+    }
+    & .footer-menu__item{
+        width: calc(25% - 2.5rem);
+        & a.footer-menu__item-link {
+            color: #fff;
+        }
+    }
+    
+    & .footer-menu__children {
+        & a.footer-menu__child-link:link,
+        & a.footer-menu__child-link:visited {
+            color: hsla(0,0%,100%,.7);
+            font-size: .8125rem;
+        }
+        & a.footer-menu__child-link:hover{
+            color: #fff;
+        }
     }
 }

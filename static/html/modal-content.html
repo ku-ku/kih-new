@@ -1,0 +1,189 @@
+<div class="modal-content">
+    <div class="modal-content__container">
+        <div class="modal-content__content">
+
+
+            <form class="form" action="#" id="feedback">
+                <div class="form__container">
+                    <div class="form__header">
+
+                        <h2 class="form__title">
+                            Обратная связь
+                        </h2>
+
+
+                    </div>
+
+                    <div class="form__body">
+
+                        <div class="form__fields">
+
+                            <div class="form__field-group-container">
+                                <div class="form__field-group">
+
+                                    <div class="form__field">
+
+                                        <div class="field">
+                                            <div class="field__content">
+
+
+                                                <div class="input-field">
+                                                    <div class="input-field__container">
+
+                                                        <label for="name" class="input-field__label">Ваше Имя</label>
+
+                                                        <div class="input-field__input-container">
+                                                            <input id="name" class="input-field__input" name="name" type="text" value="" inputmode="text" onfocus="this.closest('.input-field').classList.add('input-field--focus')" onblur="!this.value && this.closest('.input-field').classList.remove('input-field--focus')" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="form__field-group-container">
+                                <div class="form__field-group form__field-group--col-2">
+
+                                    <div class="form__field">
+
+                                        <div class="field">
+                                            <div class="field__content">
+
+
+                                                <div class="input-field input-field--error input-field--focus">
+                                                    <div class="input-field__container">
+
+                                                        <label for="phone" class="input-field__label">Телефон</label>
+
+                                                        <div class="input-field__input-container">
+                                                            <input id="phone" class="input-field__input" name="phone" type="tel" value="Абра кадабраааа" inputmode="tel" onfocus="this.closest('.input-field').classList.add('input-field--focus')" onblur="!this.value && this.closest('.input-field').classList.remove('input-field--focus')" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                            <div class="field__error">Введите телефон а не абру кадабру</div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form__field">
+
+                                        <div class="field">
+                                            <div class="field__content">
+
+
+                                                <div class="input-field">
+                                                    <div class="input-field__container">
+
+                                                        <label for="email" class="input-field__label">E-mail</label>
+
+                                                        <div class="input-field__input-container">
+                                                            <input id="email" class="input-field__input" name="email" type="email" value="" inputmode="email" onfocus="this.closest('.input-field').classList.add('input-field--focus')" onblur="!this.value && this.closest('.input-field').classList.remove('input-field--focus')" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="form__field-group-container">
+                                <div class="form__field-group">
+
+                                    <div class="form__field">
+
+                                        <div class="field">
+                                            <div class="field__content">
+
+
+                                                <div class="textarea-field">
+                                                    <div class="textarea-field__container">
+
+                                                        <label for="message" class="textarea-field__label">Комментарий</label>
+
+                                                        <div class="textarea-field__input-container">
+                                                            <textarea id="message" class="textarea-field__input" name="message" rows="4" onfocus="this.closest('.textarea-field').classList.add('textarea-field--focus')" onblur="!this.value && this.closest('.textarea-field').classList.remove('textarea-field--focus')"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="form__footer">
+                        <div class="form__footer-content">
+
+                            <div class="form__consent">
+
+                                <div class="consent">
+                                    <div class="consent__container">
+                                        <input class="consent__input visually-hidden" type="checkbox" id="consent" name="consent">
+                                        <label class="consent__checkbox" for="consent"></label>
+                                        <label class="consent__text" for="consent">Я выражаю свое согласие с <a href="#" target="_blank">Политикой конфиденциальности</a> и разрешаю обработку своих персональных данных</label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="form__button">
+
+
+
+                                <button class="button button--size-l button--color-brand button--line" type="submit">
+                                    <span class="button__text">Отправить</span>
+                                </button>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+        <div class="modal-content__close-button">
+            <button class="button" aria-label="Закрыть" data-modal-close>
+                <span class="button__icon">
+
+
+
+
+                    <span class="icon icon--size-23">
+                        <svg>
+                            <use xlink:href="./styles/img/symbol.svg#icon__close"></use>
+                        </svg>
+                    </span>
+
+                </span>
+            </button>
+        </div>
+    </div>
+</div>
