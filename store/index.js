@@ -43,7 +43,15 @@ export const actions = {
                         conte: res.content.rendered
                     };
                     
-                    commit("set", {id: page.id});
+                    if ( !(!!payload.nostore) ){
+                        commit("set", {
+                            page :{
+                                    id: page.id,
+                                    slug: page.slug,
+                                    title: page.title
+                            }
+                        });
+                    }
                     
                     resolve(page);
                 } catch(e){

@@ -55,6 +55,11 @@ const _ready = function(window){
 
 
 const WpComp = {
+    head(){
+        return {
+            title: this.title
+        };
+    },
     methods: {
         onload(){
             $nuxt.ready().then(()=>{
@@ -66,6 +71,16 @@ const WpComp = {
                 }
                 _ready((typeof global === "undefined") ? window : global);
             });
+        }
+    },
+    computed: {
+        title(){
+            var n, s = this.$store.state.page?.title || 'loading...';
+            n = s.indexOf('-');
+            if ( n > -1 ){
+                s = s.substr(n + 1);
+            }
+            return s;
         }
     }
 };

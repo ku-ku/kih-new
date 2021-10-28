@@ -12,7 +12,12 @@ export default {
                     type: String,
                     required: true,
                     default: 'unknown'
-                } 
+                },
+                nostore: {
+                    type: Boolean,
+                    required: true,
+                    default: false
+                }
     },
     data(){
         return {
@@ -22,8 +27,12 @@ export default {
         };
     },
     async fetch(){
-        this.p = await this.$store.dispatch("readConte", {slug: this.slug});
-        this.$emit("load");
+        try {
+            this.p = await this.$store.dispatch("readConte", {slug: this.slug, nostore: this.nostore});
+            this.$emit("load");
+        } catch(e){
+            console.log('ERR (on load)', e);
+        }
     }
 }
 </script>

@@ -4,7 +4,9 @@
     <main>
         <Nuxt />
     </main>
-    <kih-conte slug="footer" class="footer" />
+    <kih-conte slug="footer" 
+               nostore
+               class="footer" />
   </div>
 </template>
 
