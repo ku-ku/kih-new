@@ -8,9 +8,9 @@
                         class="header-menu__item"
                         :to="{name:'conte-id', params:{id: item.oid}}"
                         :value="item.id">
-                        <a class="header-menu__link" :href="item.url">
+                        <NuxtLink class="header-menu__link" :to="item.url">
                             {{ item.title }}
-                        </a>
+                        </NuxtLink>
                     </li>
                 </ul>
             </nav>

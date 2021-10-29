@@ -1,23 +1,19 @@
 <template>
     <kih-conte :slug="id" 
-               :key="'solution-'+id"
-               :class="'solution-'+id" 
+               :key="'page-'+id"
+               :class="'page-'+id" 
                v-on:load="onload" />
 </template>
 <script>
-import KihConte from "~/components/KihConte";
 import { WpComp } from "~/plugins/wp-comp";
-
-export default {
-    name: 'KihSolutionPage',
+export default{
+    name: "KihPage",
     mixins: [WpComp],
-    components:{
-        KihConte
-    },
     async asyncData({params}){
         return {
             id: params.id
         };
     }
-}
+}    
 </script>
+

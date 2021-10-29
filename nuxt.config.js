@@ -1,4 +1,4 @@
-import colors from 'vuetify/es5/util/colors'
+const webpack = require('webpack');
 
 export default {
   ssr: false,
@@ -18,7 +18,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/png', href: '/favicon.png' },
       { rel: 'stylesheet', type: 'text/css', href: '/styles/swiper-bundle.min.css' },
       { rel: 'stylesheet', type: 'text/css', href: '/styles/modal.min.css' },
       { rel: 'stylesheet', type: 'text/css', href: '/styles/app.min.css' }
@@ -52,7 +52,7 @@ export default {
   ],
   
   env: {
-      apiUrl:  (/^(dev)+/i.test(process.env.NODE_ENV)) ? '/api' : '//kih.ru/wp-json'
+      apiUrl:  (/^(dev)+/i.test(process.env.NODE_ENV)) ? '/api' : '/wp-json'
   },
   proxy: {
         "/api": {
@@ -60,16 +60,13 @@ export default {
             pathRewrite: {'^/api': ''}
         }
   },    /*proxy*/
-
-  vuetify: {
-    customVariables: ['~/assets/variables.scss'],
-    theme: {
-      dark: false,
-      themes: {
-      }
-    }
+  
+  router: {
+    mode: "hash",
+    prefetchLinks: false
   },
-
+  
   build: {
+    publicPath: '//www.kih.ru/wp-content/themes/kihru/app/'
   }
 }
